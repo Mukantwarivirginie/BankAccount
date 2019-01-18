@@ -1,0 +1,65 @@
+body {
+    background-image: url("https://cdn.pixabay.com/photo/2015/06/24/02/12/the-blurred-819388_960_720.jpg");
+  background-size: cover;
+}
+  
+  h1, h2 {
+    text-align: center;
+    color: white;
+   
+  }
+  h2{
+    background-color: blanchedalmond;
+    color: black;
+    border-radius: 20px;
+    width: 320px;
+  }
+  label {
+    color: white;
+  }
+  
+  button {
+    margin-bottom: 15px;
+  }
+  
+  
+  label {
+    width: 425px;
+  
+  }
+  
+  #output {
+    color: white;
+  }
+  #show-place {
+    display: none;
+  }
+  
+  .eachPlace {
+    cursor: pointer;
+    color: #0088cc;
+  }
+  
+  .eachPlace:hover {
+    text-decoration: underline;
+  }
+  
+  .black {
+   background-color: bisque;
+    color: black;
+  }
+  
+  .white {
+    background-color: white;
+  }
+  .initName{
+      margin-left:100px;
+  }
+
+  #clearAll{
+      background-color: blanchedalmond;
+      border-color: black;
+      color: black;
+  }
+  
+  
