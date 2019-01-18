@@ -13,3 +13,5 @@ to use constructors and prototypes in Javascript
 
  ### link to live site on GitHub Pages
 ink to go on Github https://github.com/mukantwarivirginie/BankAccount
+
+### copyright and license information
