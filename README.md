@@ -15,3 +15,4 @@ to use constructors and prototypes in Javascript
 ink to go on Github https://github.com/mukantwarivirginie/BankAccount
 
 ### copyright and license information
+MIT Copyright 2019
