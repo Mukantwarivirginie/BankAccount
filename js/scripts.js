@@ -3,17 +3,17 @@
 var banks = [];
 
 
-var Bank = function(inputtedName, inputtedPinNumber, initialDeposit) {
+var Money = function(inputtedName, inputtedPinNumber, initialDeposit) {
   this.name = inputtedName;
   this.pinNumber = inputtedPinNumber;
   this.balance = initialDeposit;
   this.accountNumber = Math.floor(100000 + Math.random() * 900000);
 }
 
-// banks[masterAccount] = new Bank("Master", "1111", "0" );
 
 
-Bank.prototype.withdraw = function(amount) {
+
+Money.prototype.withdraw = function(amount) {
   if (amount === "all") {
     this.balance = 0;
   } else if (this.balance > parseFloat(amount)) {
@@ -24,7 +24,7 @@ Bank.prototype.withdraw = function(amount) {
 }
 
 
-Bank.prototype.deposit = function(amount) {
+Money.prototype.deposit = function(amount) {
   this.balance += parseFloat(amount);
 }
 
@@ -37,7 +37,7 @@ var returnTotal = function() {
 }
 
 var clearFields = function() {
-  $('#initName').val('');
+  $('#newAcc').val('');
   $('#initPin').val('');
   $('#initDep').val('');
   $('#accountNumber').val('');
@@ -51,16 +51,16 @@ var clearAll = function() {
 }
 
 
-// user logic
+// interface logic
 $(document).ready(function() {
-  //New Account Form
+  
   $('button#newAcct').click(function() {
-    var inputName = $('#initName').val();
+    var inputName = $('#newAcc').val();
     var inputPin = $('#initPin').val();
     var inputDep = parseFloat($('#initDep').val());
 
     if (inputName !== "" && inputPin.length === 4 && inputDep >= 50) {
-      var newBank = new Bank(inputName, inputPin, inputDep);
+      var newBank = new Money(inputName, inputPin, inputDep);
 
       banks.push(newBank);
       $("#output").text("");
@@ -71,7 +71,8 @@ $(document).ready(function() {
     }
     clearFields();
   });
-  //Make a transaction Form
+
+
   $('button#trans').click(function() {
     var accountNumber = $('#accountNumber').val();
     var pin = $('#pin').val();
@@ -100,11 +101,11 @@ $(document).ready(function() {
         if (found === 0) {
             alert("Cannot find your account or invalid pin number");
         } else if (found === 1) {
-          $("#output").append("Thanks using Epicodus Bank. You withdrew " + amount + " from bank account#" + banks[index].accountNumber + ". Your remaining balance is $" + banks[index].balance + ".<br>");
+          $("#output").append("Thanks using Urwego Bank. You withdrew " + amount + " from bank account#" + banks[index].accountNumber + ". Your remaining balance is RWF" + banks[index].balance + ".<br>");
         } else if (found === 2) {
-          $("#output").append("Thanks using Epicodus Bank. You deposited " + amount + " to bank account#" + banks[index].accountNumber + ". Your balance is $" + banks[index].balance + ".<br>");
+          $("#output").append("Thanks using Urwego Bank. You deposited " + amount + " to bank account#" + banks[index].accountNumber + ". Your balance is RWF" + banks[index].balance + ".<br>");
         } else if (found === 3) {
-          $("#output").append("Thanks using Epicodus Bank. Your balance is  $" + banks[index].balance + ".<br>");
+          $("#output").append("Thanks using Urwego Bank. Your balance is  RWF" + banks[index].balance + ".<br>");
         } else {
           alert("Please input proper information to make a transaction.");
         }
